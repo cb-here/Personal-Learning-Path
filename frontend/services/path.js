@@ -12,9 +12,10 @@ export const getPath = async (id) => {
         const token = localStorage.getItem("token")
         if (!token) throw new Error("No token found!")
         const response = await path.get(`/${id}`, {
-            headers: {Authorization: `Bearer ${token}`}
+            headers: { Authorization: `Bearer ${token}` }
         })
-        return response.data.paths
+        const data = response.data;
+        return Array.isArray(data) ? data : data.paths;
     } catch (error) {
         throw new Error('Failed to fetch to path data')
     }
@@ -35,7 +36,7 @@ export const savePath = async (pathData) => {
         if (!token) throw new Error("No token found!")
 
         const response = await path.post("/", pathData, {
-            headers: {Authorization: `Bearer ${token}`}
+            headers: { Authorization: `Bearer ${token}` }
         })
         return response.data
     } catch (error) {
