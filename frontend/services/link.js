@@ -16,7 +16,7 @@ export const getLinks = async () => {
             headers: {Authorization: `Bearer ${token}`}
         })
         const data = response.data
-        return Array.isArray(data) ? data : data.paths;
+        return Array.isArray(data) ? data : data.links;
     } catch(error) {
         throw new Error(error.response?.data?.message || "Failed to fetch links")
     }
