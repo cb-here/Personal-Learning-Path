@@ -67,14 +67,14 @@ const Path = () => {
                     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
                         {paths?.map((path) => (
                             <NavLink 
-                                key={path._id} 
-                                to={`/path/${path._id}`}
+                                key={path?._id} 
+                                to={`/path/${path?._id}`}
                                 className=" bg-gray-800 hover:bg-gray-700 rounded-xl p-6 transition-all hover:ring-2 hover:ring-blue-500 hover:shadow-lg hover:shadow-blue-500/10 overflow-hidden"
                             >
                                 <div className="flex flex-col h-full">
                                     <div className="mb-4">
                                         <h3 className="text-lg font-semibold text-white line-clamp-2">
-                                            {path.title}
+                                            {path?.title}
                                         </h3>
                                     </div>
                                 </div>
