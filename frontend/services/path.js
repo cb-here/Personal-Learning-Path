@@ -1,8 +1,11 @@
 import axios from 'axios'
 
+const backendURL = process.env.REACT_APP_BACKEND_URL;
+
 const path = axios.create({
-    baseURL: "http://localhost:5000/api/path"
+    baseURL: `${backendURL}/api/path`
 })
+
 
 export const getPath = async (id) => {
     try {

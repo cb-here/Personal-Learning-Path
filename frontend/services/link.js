@@ -1,8 +1,11 @@
 import axios from 'axios'
 
+const backendURL = process.env.REACT_APP_BACKEND_URL;
+
 const api = axios.create({
-    baseURL: "http://localhost:5000/api/link"
+    baseURL: `${backendURL}/api/link`
 })
+
 
 export const getLinks = async () => {
     const token = localStorage.getItem("token")

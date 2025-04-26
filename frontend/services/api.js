@@ -1,19 +1,22 @@
 import axios from 'axios'
 
+const backendURL = process.env.REACT_APP_BACKEND_URL;
+
 const user = axios.create({
-  baseURL: "http://localhost:5000/api/auth"
+    baseURL: `${backendURL}/api/auth`
 })
 
 const course = axios.create({
-  baseURL: "http://localhost:5000/api/course"
+    baseURL: `${backendURL}/api/course`
 })
 
+
 const discuss = axios.create({
-  baseURL: "http://localhost:5000/api/discuss"
+  baseURL: `${backendURL}/api/discuss`
 })
 
 const code = axios.create({
-  baseURL: "http://localhost:5000/api/code"
+  baseURL: `${backendURL}/api/code`
 })
 
 export const userRegister = async (userData) => {
