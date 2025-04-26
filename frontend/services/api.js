@@ -1,6 +1,6 @@
 import axios from 'axios'
 
-const backendURL = process.env.REACT_APP_BACKEND_URL;
+const backendURL = import.meta.env.VITE_BACKEND_URL;
 
 const user = axios.create({
     baseURL: `${backendURL}/api/auth`
@@ -78,7 +78,8 @@ export const fetchReccomendations = async () => {
 
 export const fetchDiscussions = async () => {
   const response = await discuss.get("/")
-  return response.data
+  const data = response.data
+  return Array.isArray(data) ? data : data.discussions
 }
 
 export const getDiscussionById = async (id) => {
