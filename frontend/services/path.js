@@ -14,7 +14,7 @@ export const getPath = async (id) => {
         const response = await path.get(`/${id}`, {
             headers: {Authorization: `Bearer ${token}`}
         })
-        return response.data
+        return response.data.paths
     } catch (error) {
         throw new Error('Failed to fetch to path data')
     }
