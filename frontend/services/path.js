@@ -23,6 +23,7 @@ export const getPath = async (id) => {
 export const getPaths = async () => {
     try {
         const response = await path.get("/")
+        console.log("Response from server:", response.data);
         const data = response.data;
         return Array.isArray(data) ? data : data.paths;
     } catch (error) {
