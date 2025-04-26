@@ -39,7 +39,7 @@ export const addComment = async (req, res) => {
         if (!discussion) return res.status(404).json({message: "Discussion not found"})
         discussion.comments.push({user: userId, content})
         await discussion.save()
-        res.status(201).json({message: "Comment added successfully"})
+        res.status(201).json({message: "Comment added successfully", discussion})
     } catch(error) {
         return res.status(500).json({message: "Error adding comment"})
     }
