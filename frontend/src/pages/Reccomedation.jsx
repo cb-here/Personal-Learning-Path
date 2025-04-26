@@ -50,7 +50,7 @@ function Reccomendation() {
 
                             {/* Course Categories */}
                             <div className="flex flex-wrap gap-2 mb-4">
-                                {course.category.map((item, index) => (
+                                {course?.category?.map((item, index) => (
                                     <span
                                         key={index}
                                         className="inline-block bg-gray-700 text-gray-200 px-3 py-1 rounded-full text-xs font-medium"

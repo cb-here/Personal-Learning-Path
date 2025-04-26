@@ -43,7 +43,7 @@ function Discuss() {
                 <p className="text-center text-gray-400">No discussions available at the moment.</p>
             ) : (
                 <div className="grid grid-cols-1 gap-8">
-                    {discussions.map((discussion) => (
+                    {discussions?.map((discussion) => (
                         <div
                             key={discussion._id}
                             className="bg-gray-800 rounded-xl p-6 shadow-md hover:shadow-lg border border-gray-700 transition-all duration-300"

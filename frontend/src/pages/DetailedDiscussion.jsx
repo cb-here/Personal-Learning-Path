@@ -110,7 +110,7 @@ function DetailedDiscussion() {
                                 <p className="italic">Not Commented yet!</p>
                             </div>
                         ) : (
-                            discussion?.comments.map((comment) => (
+                            discussion?.comments?.((comment) => (
                                 <div className="border-b mb-3 p-2" key={comment._id}>
                                     <h1>{comment?.user?.username || 'Anon'}</h1>
                                     <p>{comment?.content}</p>

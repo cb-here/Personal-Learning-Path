@@ -15,7 +15,7 @@ function Modal({ isOpen, onClose, node }) {
                     <h3 className="text-lg font-semibold mb-2">Resources</h3>
                     {node.data.resources && node.data.resources.length > 0 ? (
                         <ul className="space-y-3">
-                            {node.data.resources.map((res, index) => (
+                            {node?.data?.resources?.map((res, index) => (
                                 <li key={index} className="bg-gray-800 p-3 rounded-lg shadow flex items-start gap-3">
                                     <span className="text-2xl">
                                         {res.type === 'video' ? '🎥' : res.type === 'article' ? '📄' : '🔗'}

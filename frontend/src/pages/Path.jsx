@@ -65,7 +65,7 @@ const Path = () => {
                     </div>
                 ) : (
                     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-                        {paths.map((path) => (
+                        {paths?.map((path) => (
                             <NavLink 
                                 key={path._id} 
                                 to={`/path/${path._id}`}

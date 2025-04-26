@@ -22,7 +22,7 @@ const GenerateManually = () => {
     const generatePathData = ({ title, nodes, edges }) => {
         return {
           title,
-          nodes: nodes.map((node) => ({
+          nodes: nodes?.map((node) => ({
             id: node.id,
             type: node.type,
             position: node.position,
@@ -31,7 +31,7 @@ const GenerateManually = () => {
             },
             resources: node.resources || [],
           })),
-          edges: edges.map((edge) => ({
+          edges: edges?.map((edge) => ({
             id: edge.id,
             source: edge.source,
             target: edge.target,

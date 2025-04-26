@@ -97,7 +97,7 @@ const Links = () => {
                     </div>
                 ) : (
                     <div className="space-y-4">
-                        {links.map((link) => (
+                        {links?.map((link) => (
                             <div
                                 key={link._id}
                                 className="group relative transition-all duration-200 hover:scale-[1.01]"
