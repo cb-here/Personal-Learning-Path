@@ -1,1 +1,91 @@
 @import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@300;400;500;600;700&display=swap');
+
+@layer base {
+  * {
+    @apply border-gray-700;
+  }
+
+  body {
+    @apply bg-gray-950 text-gray-100 font-['Fredoka',sans-serif] antialiased;
+  }
+
+  html {
+    @apply scroll-smooth;
+  }
+
+  /* Custom scrollbar for dark theme */
+  ::-webkit-scrollbar {
+    @apply w-2 h-2;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-gray-900;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-gray-700 rounded-full hover:bg-gray-600;
+  }
+
+  /* Default heading styles */
+  h1, h2, h3, h4, h5, h6 {
+    @apply text-white font-semibold;
+  }
+
+  /* Links */
+  a {
+    @apply transition-colors duration-200;
+  }
+
+  /* Inputs and form elements */
+  input, textarea, select {
+    @apply bg-gray-800 border-gray-700 text-white placeholder-gray-400;
+    @apply focus:border-purple-600 focus:ring-purple-600;
+  }
+
+  /* Buttons */
+  button {
+    @apply transition-all duration-200;
+  }
+
+  /* Cards and containers */
+  .card {
+    @apply bg-gray-900 border border-gray-800 rounded-lg shadow-xl;
+  }
+}
+
+@layer components {
+  /* Custom component utilities */
+  .text-muted {
+    @apply text-gray-400;
+  }
+
+  .bg-surface {
+    @apply bg-gray-900;
+  }
+
+  .bg-elevated {
+    @apply bg-gray-800;
+  }
+
+  .border-default {
+    @apply border-gray-800;
+  }
+}
+
+
+
+.shiny-text {
+  background: linear-gradient(90deg, #ffffff, #ffeeaa, #ffffff);
+  background-size: 200% auto;
+  color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+  animation: shine 2s linear infinite;
+}
+
+@keyframes shine {
+  to {
+    background-position: -200% center;
+  }
+}
